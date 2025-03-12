@@ -1,7 +1,7 @@
 <?php 
-class NilaiSiswa {
+class NilaiMahasiswa {
     public $nama;
-    public $nilai;
+    public $matakuliah;
     public $nilai_uts;
     public $nilai_uas;
     public $nilai_tugas;
@@ -14,6 +14,13 @@ class NilaiSiswa {
           $this->nilai_uas * self::PERSENTASE_UAS +
           $this->nilai_tugas * self::PERSENTASE_TUGAS;
         return $nilai_akhir;
+    }
+    public function kelulusan(){
+        if($this->getNilaiAkhir() >= 60){
+            return "Lulus";
+        } else {
+            return "Tidak Lulus";
+        }
     }
 
 }
